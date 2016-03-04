@@ -1,0 +1,53 @@
+a.home:link {color:skyblue;}
+a.home:visited {color:thistle;}
+
+/*
+h1 {
+ font-size:48pt;
+ font-style:italic;
+ font-weight:bold;
+ text-align:center;
+}
+*/
+
+h1, h2, h3, h4 {
+ font-family:verdana;
+}
+img {
+ border-color:#999;
+}
+p {
+ font-family:verdana,'Trebuchet MS';
+ font-size: 10pt;
+}
+
+.body-gen {
+color:#ffffff;
+background-color:#442222;
+margin:10px;
+}
+.td-home {
+background-color:#000;
+color:#fff;
+text-align:center;
+}
+
+.td-center {
+text-align:center;
+background-color:#eeeeff;
+color:#000;
+}
+
+.td-justify {
+text-align:justify;
+background-color:#eeeeff;
+color:#000;
+}
+
+.footer {
+ background-color="999999";
+}
+.div-border {
+ border:5px groove #333; 
+ width:60%;
+}

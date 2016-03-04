@@ -1,0 +1,144 @@
+<html>
+<head>
+<title>I colori del buio ~ Home</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<script language="Javascript">
+<!--
+
+function stopError() {	return true; }
+	window.onerror = stopError;
+
+	//var total = 7 * 255;
+	var total = 6 * 255 + 127;
+
+	var arrR = new Array(total);
+	var arrG = new Array(total);
+	var arrB = new Array(total);
+
+	var NN = (window.Event) ? 1 : 0;
+	var IE = (document.all) ? 1 : 0;
+	var theX = 0;
+	var adjX = 0;
+	var theY = 0;
+	var theWidth = 0;
+	var theHeight = 0;
+	var Ydiff = 0;
+	var R = 0;
+	var G = 0;
+	var B = 0;
+	var websafe = 0;
+	var onImg = 0;
+
+	for (var i=0; i<256; i++) {
+		arrR[i]		= 255;
+		arrR[2*255-i]	= i;
+		arrR[i+2*255]	= 0;
+		arrR[i+3*255]	= 0;
+		arrR[i+4*255]	= i;
+		arrR[6*255-i]	= 255;
+		//if (i<255) arrR[i+6*255] = 255;
+		if (i<255) arrR[i/2+6*255] = 127;
+
+		arrG[i] 	= i;
+		arrG[i+255] 	= 255;
+		arrG[i+2*255]	= 255;
+		arrG[4*255-i]	= i;
+		arrG[i+4*255]	= 0;
+		arrG[i+5*255]	= 0;
+		//if (i<255) arrG[i+6*255] = 255;
+		if (i<255) arrG[i/2+6*255] = 127;
+
+		arrB[i]		= 0;
+		arrB[i+255]	= 0;
+		arrB[i+2*255]	= i;
+		arrB[i+3*255]	= 255;
+		arrB[i+4*255]	= 255;
+		arrB[6*255-i]	= i;
+		//if (i<255) arrB[i+6*255] = 255;
+		if (i<255) arrB[i/2+6*255] = 127;
+	}
+		
+	var hexChars = "0123456789ABCDEF";
+	function Dec2Hex (Dec) {
+		var a = Dec % 16;
+		var b = (Dec - a)/16;
+		hex = "" + hexChars.charAt(b) + hexChars.charAt(a);
+		return hex;
+	}
+
+	function squeak(e) {
+		if (NN) {
+			theX = e.pageX;
+			theY = e.pageY;
+			theWidth = window.innerWidth;
+			theHeight = window.innerHeight;
+		} else { if (IE) {
+			theX = event.clientX + document.body.scrollLeft;
+			theY = event.clientY + document.body.scrollTop;
+			theWidth  = document.body.clientWidth;
+			theHeight = document.body.clientHeight;
+	        }}
+		
+		Ydiff = Math.round(theY * (2*255/(theHeight+1)) - 255);
+	
+		adjX = Math.round(theX * (total/theWidth));
+
+		R = arrR[adjX] - Ydiff;	if (R<0) R = 0; if (R>255 || isNaN(R)) R=255;
+		G = arrG[adjX] - Ydiff;	if (G<0) G = 0; if (G>255 || isNaN(G)) G=255;
+		B = arrB[adjX] - Ydiff;	if (B<0) B = 0; if (B>255 || isNaN(B)) B=255;
+
+		//maybe this is the trick:
+		if (websafe) {
+			R = Math.round(R/51) * 51;
+			G = Math.round(G/51) * 51;
+			B = Math.round(B/51) * 51;
+		}
+
+		hexCode = Dec2Hex(R) + Dec2Hex(G) + Dec2Hex(B);
+		document.bgColor = '#' + hexCode;
+		// document.fgColor = '#' + hexCode;
+		// document.vlinkColor = '#' + hexCode;
+		// window.status = 'DEC: (' + R + ',' + G + ',' + B + ')   HEX: #' + hexCode.toUpperCase();
+	}
+
+	if (NN) {
+		document.captureEvents(Event.MOUSEMOVE);
+	}
+	document.onmousemove = squeak;
+// -->
+</script>
+</head>
+<body >
+<center>
+<table border="1" cellspacing=0 cellpadding="5">
+<tr>
+<td width=800 class="td-home">
+<p>
+<img border="0" src="images/icoloridelbuio_640.gif" width="640" height="73"></p>
+<!-- <h1>I colori del buio</h1> -->
+<p><b>Disegni d'amicizia di bambini giapponesi e italiani (1938)</b></p>
+<p><i>a cura di</i><br>
+Gloria Levoni</p>
+<p><a class="home" href="01_introduzione_generale.htm">Introduzione ~ Generale</a><br>
+<a class="home" href="02_introduzione_agnelli.htm">Introduzione ~ Umberto Agnelli</a><br>
+<a class="home" href="03_introduzione_vangi.htm">Introduzione ~ Vangi Museum</a><br>
+<a class="home" href="04_introduzione_levoni.htm">Introduzione ~ Tracce colorate, tutte da esplorare ~ Gloria Levoni</a><br>
+<a class="home" href="05_introduzione_bertolotti.htm">Introduzione ~ Cenni sui rapporti tra Giappone e Italia nel periodo 1937-1940 ~ Maurizio Bertolotti</a><br>
+<a class="home" href="06_introduzione_faeti.htm">Introduzione ~ Voci da un altro tempo, segni da un altro luogo ~ Antonio Faeti</a><br>
+<a class="home" href="07_introduzione_sermidi.htm">Introduzione ~ Disegni giapponesi</a></p>
+<p>
+<a class="home" href="08_disegni_giapponesi.htm">Disegni giapponesi</a><br>
+<a class="home" href="09_disegni_italiani.htm">Disegni italiani</a><br>
+<a class="home" href="10_disegni_tedeschi.htm">Disegni tedeschi</a></p>
+<p>
+<a class="home" href="11_slide_show_random.htm">Slide Show</a></p>
+<p>
+<a class="home" href="12_publicity.htm">Publicity</a></p>
+<p>About this web site</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

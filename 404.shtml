@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="refresh" content="10;url=http://<!--#echo var='HTTP_HOST' -->" >
+<title><!--#echo var="HTTP_HOST" --> | 404 page not found error</title>
+<meta name="author" content="Theo Armour">
+<style>body {font-family: sans-serif;}</style>
+</head>
+<body>
+<div style="text-align:center;">
+<h2>404 Page Not Found Error</h2>
+Hello visitor with IP address of <!--#echo var="REMOTE_ADDR" --> <br>
+<br>
+You are using the following browser:<br>
+<!--#echo var="HTTP_USER_AGENT" --><br>
+<br>
+You've just come from:<br>
+<!--#echo var="HTTP_REFERER" --><br>
+<br>
+The following URL you requested was not found on this server:<br>
+<!--#echo var="HTTP_HOST" --><!--#echo var="REQUEST_URI" -->
+<br>
+<br>In a few seconds you should be re-directed to <!--#echo var="HTTP_HOST" --> home page.<br>
+<br>
+Or click on the following link if you are in a hurry:<br>
+<a href="http://<!--#echo var='HTTP_HOST' -->"><!--#echo var="HTTP_HOST" --><br>
+</div>
+</body>
+</html>
+

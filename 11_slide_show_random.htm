@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>I colori del buio ~ Slide Show</title>
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<script language="JavaScript" type="text/javascript">
+<!--
+var myimages=new Array(
+"g_01_gambe_ritsu",
+"g_02_osabe_hiroshi",
+"g_03_hirasaha_miwayasu",
+"g_04_sonoda_tsutomu",
+"g_05_watanabe_yoshitsugu",
+"i_gabbiani_bosilio",
+"i_menenti_elsa",
+"i_castiglione_ferdinando",
+"i_matteini_gianguido",
+"i_torre_pasquale",
+"t_kramer_edith",
+"t_petzsch_r")
+
+function random_imglink(){
+	var ry=Math.floor(Math.random()*myimages.length);
+	var hgt=200;
+	if (document.getElementById) {
+		hgt=document.body.clientWidth*0.67;
+		if (hgt > document.body.clientHeight*.9) hgt=document.body.clientHeight*.9;
+		document.title=myimages[ry]+".jpg "  + document.body.clientWidth + " " + document.body.clientHeight + " " + hgt;
+	}
+	else {
+	 hgt=document.innerWidth*0.67;
+	}
+	document.sld.height=hgt;
+	document.sld.src="images/"+myimages[ry]+".jpg";
+
+	setTimeout("random_imglink()",3000);
+}
+//-->
+</script>
+</head>
+<body bgcolor=black onload="random_imglink()">
+<div align="center">
+<center>
+<img src="images/g_01_gambe_ritsu.jpg" align="center" name="sld" height="480">
+</center>
+</div>
+</body>
+</html>

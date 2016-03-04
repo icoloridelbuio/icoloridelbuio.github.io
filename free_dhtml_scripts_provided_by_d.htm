@@ -1,0 +1,94 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Free DHTML scripts provided by Dynamic Drive</title>
+</head>
+<body>
+
+<script language="JavaScript1.2">
+
+/***********************************************
+* Flexi Slideshow- © Dynamic Drive (www.dynamicdrive.com)
+* This notice must stay intact for use
+* Visit http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+var variableslide=new Array()
+
+//variableslide[x]=["path to image", "OPTIONAL link for image", "OPTIONAL text description (supports HTML tags)"]
+
+variableslide[0]=['images/designi_1.jpg', '', '']
+variableslide[1]=['images/designi_2.jpg', 'http://www.space.com', 'Has aliens landed on earth? You decide.']
+variableslide[2]=['images/designi_1.jpg', '', '']
+
+//configure the below 3 variables to set the dimension/background color of the slideshow
+
+var slidewidth=130 //set to width of LARGEST image in your slideshow
+var slideheight=120 //set to height of LARGEST iamge in your slideshow, plus any text description
+var slidebgcolor='#F3F3F3'
+
+//configure the below variable to determine the delay between image rotations (in miliseconds)
+var slidedelay=3000
+
+////Do not edit pass this line////////////////
+
+var ie=document.all&&navigator.userAgent.indexOf("Opera")==-1
+var dom=document.getElementById&&navigator.userAgent.indexOf("Opera")==-1
+
+for (i=0;i<variableslide.length;i++){
+var cacheimage=new Image()
+cacheimage.src=variableslide[i][0]
+}
+
+var currentslide=0
+
+function rotateimages(){
+contentcontainer='<center>'
+if (variableslide[currentslide][1]!="")
+contentcontainer+='<a href="'+variableslide[currentslide][1]+'">'
+contentcontainer+='<img src="'+variableslide[currentslide][0]+'" border="0" vspace="3">'
+if (variableslide[currentslide][1]!="")
+contentcontainer+='</a>'
+contentcontainer+='</center>'
+if (variableslide[currentslide][2]!="")
+contentcontainer+=variableslide[currentslide][2]
+
+if (document.layers){
+crossrotateobj.document.write(contentcontainer)
+crossrotateobj.document.close()
+}
+else if (ie||dom)
+crossrotateobj.innerHTML=contentcontainer
+if (currentslide==variableslide.length-1) currentslide=0
+else currentslide++
+setTimeout("rotateimages()",slidedelay)
+}
+
+if (ie||dom)
+document.write('<div id="slidedom" style="width:'+slidewidth+';height:'+slideheight+'; background-color:'+slidebgcolor+'"></div>')
+
+function start_slider(){
+crossrotateobj=dom? document.getElementById("slidedom") : ie? document.all.slidedom : document.slidensmain.document.slidenssub
+if (document.layers)
+document.slidensmain.visibility="show"
+rotateimages()
+}
+
+if (ie||dom)
+start_slider()
+else if (document.layers)
+window.onload=start_slider
+
+</script>
+<ilayer id="slidensmain" width=&{slidewidth}; height=&{slideheight}; bgColor=&{slidebgcolor}; visibility=hide><layer id="slidenssub" width=&{slidewidth}; left=0 top=0></layer></ilayer>
+
+<p align="center"><font face="Arial" size="-2">Free DHTML scripts provided by<br>
+<a href="http://www.dynamicdrive.com">Dynamic Drive</a></font></p>
+
+
+</body>
+
+</html>
