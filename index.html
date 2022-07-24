@@ -6,6 +6,7 @@
 <!--
 
 function stopError() {	return true; }
+
 	window.onerror = stopError;
 
 	//var total = 7 * 255;
@@ -57,7 +58,7 @@ function stopError() {	return true; }
 		//if (i<255) arrB[i+6*255] = 255;
 		if (i<255) arrB[i/2+6*255] = 127;
 	}
-		
+
 	var hexChars = "0123456789ABCDEF";
 	function Dec2Hex (Dec) {
 		var a = Dec % 16;
@@ -78,9 +79,9 @@ function stopError() {	return true; }
 			theWidth  = document.body.clientWidth;
 			theHeight = document.body.clientHeight;
 	        }}
-		
+
 		Ydiff = Math.round(theY * (2*255/(theHeight+1)) - 255);
-	
+
 		adjX = Math.round(theX * (total/theWidth));
 
 		R = arrR[adjX] - Ydiff;	if (R<0) R = 0; if (R>255 || isNaN(R)) R=255;

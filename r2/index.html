@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang=en >
+<head>
+<meta charset=utf-8 >
+<title>i colori del buio</title>
+<meta name=viewport content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui' >
+<meta name=description content='' >
+<meta name=keywords content='JavaScript,GitHub,FOSS,3D,STEM' >
+<meta name=date content='2016-03-23' >
+</head>
+<body>
+<script>
+
+	var count = 1;
+	var delta = 1;
+
+	init();
+
+	function init() {
+
+		var css = document.body.appendChild( document.createElement( 'style' ) );
+		css.innerHTML =
+
+			'body { font: 12pt monospace; color: #fff; left: 0; margin: 0 auto; max-width: 800px; right: 0; }' +
+			'h2 { margin: 0; }' +
+			'a { text-decoration: none; }' +
+			'a.home:link {color:skyblue;}' +
+			'a.home:visited {color:thistle;}' +
+
+			'#contents { border: 1px solid #444; background-color: #000; margin: 20px; padding: 20px; text-align: center; }' +
+
+		'';
+
+		var contents = document.body.appendChild( document.createElement( 'div' ) );
+		contents.id = 'contents';
+		contents.innerHTML =
+
+			'<img border="0" src="../images/icoloridelbuio_640.gif" width="640" height="73"></p>' +
+			'<p><b>Disegni d\'amicizia di bambini giapponesi e italiani (1938)</b></p>' +
+			'<p><i>a cura di</i><br>' +
+			'Gloria Levoni</p>' +
+			'<p><a class="home" href="01_introduzione_generale.htm">Introduzione ~ Generale</a><br>' +
+			'<a class="home" href="02_introduzione_agnelli.htm">Introduzione ~ Umberto Agnelli</a><br>' +
+			'<a class="home" href="03_introduzione_vangi.htm">Introduzione ~ Vangi Museum</a><br>' +
+			'<a class="home" href="04_introduzione_levoni.htm">Introduzione ~ Tracce colorate, tutte da esplorare ~ Gloria Levoni</a><br>' +
+			'<a class="home" href="05_introduzione_bertolotti.htm">Introduzione ~ Cenni sui rapporti tra Giappone e Italia nel periodo 1937-1940 ~ Maurizio Bertolotti</a><br>' +
+			'<a class="home" href="06_introduzione_faeti.htm">Introduzione ~ Voci da un altro tempo, segni da un altro luogo ~ Antonio Faeti</a><br>' +
+			'<a class="home" href="07_introduzione_sermidi.htm">Introduzione ~ Disegni giapponesi</a></p>' +
+			'<p>' +
+			'<a class="home" href="08_disegni_giapponesi.htm">Disegni giapponesi</a><br>' +
+			'<a class="home" href="09_disegni_italiani.htm">Disegni italiani</a><br>' +
+			'<a class="home" href="10_disegni_tedeschi.htm">Disegni tedeschi</a></p>' +
+			'<p><a class="home" href="11_slide_show_random.htm">Slide Show</a></p>' +
+			'<p><a class="home" href="12_publicity.htm">Publicity</a></p>' +
+			'<p>About this web site</p>' +
+
+		'';
+
+		window.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
+		document.body.style.backgroundColor = '#000';
+
+	}
+
+	function onDocumentMouseMove() {
+
+			mouseX = ( event.clientX / window.innerWidth );
+			mouseY = ( event.clientY / window.innerHeight );
+
+			r = Math.floor( mouseX * 256 ); 
+			g = Math.floor( mouseY * 256 );
+
+			delta = ( count >= 255 || count <= 0 ) ? -delta : delta;
+			count += delta;
+
+			color = 'rgb(' + r + ',' + g + ',' + count + ')';
+			document.body.style.backgroundColor = color;
+//			info.innerHTML = 'mouse x ' + mouseX.toFixed( 3 ) + ', y ' + mouseY.toFixed( 3 ) + '<br>' + color + '<br>' + count;
+
+	}
+
+</script>
+</body>
+</html>
